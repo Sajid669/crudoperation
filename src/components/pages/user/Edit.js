@@ -26,24 +26,26 @@ function Edit() {
       });
   };
 
-
-    const updateUser = (e) => {
-      e.preventDefault()
-      axios
-        .put(`http://localhost:3333/contacts/${id}`,{
-          name, email, phone
-        })
-        .then((response) => {
-          console.log({response})
-          //setUser(response.data);
-          // setName(response.data.name);
-          // setEmail(response.data.email);
-          // setPhone(response.data.phone);
-        })
-        .catch((error) => {
-          // setError("something wong with api", error);
-        });
-    };
+  const updateUser = (e) => {
+    e.preventDefault();
+    axios
+      .put(`http://localhost:3333/contacts/${id}`, {
+        name,
+        email,
+        phone,
+      })
+      .then((response) => {
+        console.log({ response });
+        //setUser(response.data);
+        // setName(response.data.name);
+        // setEmail(response.data.email);
+        // setPhone(response.data.phone);
+        navigate("/");
+      })
+      .catch((error) => {
+        // setError("something wong with api", error);
+      });
+  };
 
   useEffect(() => {
     loadUsers();
@@ -79,7 +81,10 @@ function Edit() {
           placeholder="Enter Your Phone"
           className="w-[80%] bg-white text-xl font-Montserrat font-normal outline-none mt-4 py-4 pl-6 border bord-zinc-400"
         />
-        <button type="submit" className="w-[80%] bg-blue-600  text-white text-xl font-Montserrat font-semibold mt-4 py-4 pl-6 ">
+        <button
+          type="submit"
+          className="w-[80%] bg-blue-600  text-white text-xl font-Montserrat font-semibold mt-4 py-4 pl-6 "
+        >
           Update User
         </button>
       </form>
