@@ -1,0 +1,16 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "sajid",
+      "username": "sajidAlam",
+      "phone": 7488091620,
+      "email": "sajid@125",
+      "address": {
+        "street": "raja colny",
+        "city": "Ranchi",
+        "zipcode": "834001"
+      }
+    }
+  ]
+}
